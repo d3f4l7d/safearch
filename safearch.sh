@@ -26,7 +26,7 @@ mkfs.ext4 /dev/nvme0n1p2
 mount /dev/nvme0n1p2 /mnt
 mkdir /mnt/boot
 mount /dev/nvme0n1p1 /mnt/boot
-pacstrap /mnt base linux linux-firmware vim
+pacstrap /mnt base linux linux-firmware vim linux-lts linux-lts-headers archlinux-keyring
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 fallocate -l 2GB /swapfile
@@ -60,6 +60,7 @@ cd
 systemctl enable NetworkManager
 useradd -mG wheel d3f4l7d
 passwd d3f4l7d
+echo "Uncomment 1st wheel"
 EDITOR=vim visudo
 exit
 umount -a
@@ -67,3 +68,4 @@ reboot
 
 sudo pacman -S openssh ufw xorg 
 sudo systemctl start sshd && sudo systemctl start ufw
+sudo systemctl enable sshd && sudo systemctl enable ufw
