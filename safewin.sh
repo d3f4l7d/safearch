@@ -8,6 +8,7 @@ echo
 
 sudo -s
 mkdir /mnt/windowsEFI
+echo "mount on windows efi partition"
 mount /dev/nvme0n1p1 /mnt/windowsEFI
 cd /mnt/windowsEFI/EFI
 cp -r Microsoft /boot/EFI
