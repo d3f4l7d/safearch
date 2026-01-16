@@ -47,11 +47,9 @@ echo "::1              localhost" >> /etc/hosts
 echo "127.0.1.1        n4m3h3r3p134z.localdomain        n4m3h3r3p134z" >> /etc/hosts
 passwd
 pacman -S efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel
-cd /boot
-cd loader/
+bootctl --path=/boot install
 echo "timeout 3" >> /boot/loader/loader.conf
 echo "default n4m3h3r3p134z-*" >> /boot/loader/loader.conf
-cd entries/
 echo "title    Arch Linux" >> /boot/loader/entries/n4m3h3r3p134z.conf
 echo "linux    /vmlinuz-linux" >> /boot/loader/entries/n4m3h3r3p134z.conf
 echo "initrd    /initramfs-linux.img" >> /boot/loader/entries/n4m3h3r3p134z.conf
