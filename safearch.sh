@@ -57,7 +57,7 @@ echo "options    root=/dev/nvme0n1p2 rw" >> /boot/loader/entries/n4m3h3r3p134z.c
 systemctl enable NetworkManager
 useradd -mG wheel d3f4l7d
 passwd d3f4l7d
-echo "Uncomment 1st wheel"
+echo "Uncomment 1st wheel like, %wheel ALL=(ALL:ALL) ALL"
 EDITOR=vim visudo
 exit
 umount -a
