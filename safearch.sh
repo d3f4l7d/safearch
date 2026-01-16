@@ -54,7 +54,6 @@ echo "title    Arch Linux" >> /boot/loader/entries/n4m3h3r3p134z.conf
 echo "linux    /vmlinuz-linux" >> /boot/loader/entries/n4m3h3r3p134z.conf
 echo "initrd    /initramfs-linux.img" >> /boot/loader/entries/n4m3h3r3p134z.conf
 echo "options    root=/dev/nvme0n1p2 rw" >> /boot/loader/entries/n4m3h3r3p134z.conf
-cd
 systemctl enable NetworkManager
 useradd -mG wheel d3f4l7d
 passwd d3f4l7d
