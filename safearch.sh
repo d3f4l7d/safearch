@@ -23,13 +23,17 @@ echo "209715166 (default)"
 echo "w"
 mkfs.fat -F32 /dev/nvme0n1p1
 mkfs.ext4 /dev/nvme0n1p2
+
 mount /dev/nvme0n1p2 /mnt
 mkdir /mnt/boot
 mount /dev/nvme0n1p1 /mnt/boot
+
 pacman -Sy archlinux-keyring
 pacstrap /mnt base linux linux-headers linux-firmware vim linux-lts linux-lts-headers
 genfstab -U /mnt >> /mnt/etc/fstab
+
 arch-chroot /mnt
+
 fallocate -l 2GB /swapfile
 chmod 600 /swapfile
 mkswap /swapfile
@@ -45,10 +49,11 @@ echo "n4m3h3r3p134z" >> /etc/hostname
 echo "127.0.0.1        localhost" >> /etc/hosts
 echo "::1              localhost" >> /etc/hosts
 echo "127.0.1.1        n4m3h3r3p134z.localdomain        n4m3h3r3p134z" >> /etc/hosts
+
 passwd
 pacman -S efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel grub
 
-echo "First you should try systemd-boot"
+echo "[systemd-boot] -> suitable for many machines from MSI, ASRock, or else, except for Dell InsydeH2O"
 bootctl --path=/boot install
 echo "timeout 3" >> /boot/loader/loader.conf
 echo "default n4m3h3r3p134z-*" >> /boot/loader/loader.conf
@@ -57,7 +62,7 @@ echo "linux    /vmlinuz-linux" >> /boot/loader/entries/n4m3h3r3p134z.conf
 echo "initrd    /initramfs-linux.img" >> /boot/loader/entries/n4m3h3r3p134z.conf
 echo "options    root=/dev/nvme0n1p2 rw" >> /boot/loader/entries/n4m3h3r3p134z.conf
 
-echo "If systemd-boot doesn't work for your machine, try grub-boot"
+echo "[grub] -> specifically suitable for Windows-base Dell InsydeH2O"
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
 grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -69,7 +74,7 @@ EDITOR=vim visudo
 exit
 umount -a
 reboot
-echo "Enter BIOS and point out boot dir"
+echo "Enter BIOS and find Arch Linux on Boot menu or point out /grub/x86_64-efi/grub.efi instead"
 
 sudo pacman -S openssh ufw xorg git
 sudo systemctl start sshd && sudo systemctl start ufw
