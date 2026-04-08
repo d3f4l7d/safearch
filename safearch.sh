@@ -46,7 +46,8 @@ echo "127.0.0.1        localhost" >> /etc/hosts
 echo "::1              localhost" >> /etc/hosts
 echo "127.0.1.1        n4m3h3r3p134z.localdomain        n4m3h3r3p134z" >> /etc/hosts
 passwd
-pacman -S efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel
+pacman -S efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel grub
+echo "First You should try systemd-boot"
 bootctl --path=/boot install
 echo "timeout 3" >> /boot/loader/loader.conf
 echo "default n4m3h3r3p134z-*" >> /boot/loader/loader.conf
@@ -54,6 +55,10 @@ echo "title    Arch Linux" >> /boot/loader/entries/n4m3h3r3p134z.conf
 echo "linux    /vmlinuz-linux" >> /boot/loader/entries/n4m3h3r3p134z.conf
 echo "initrd    /initramfs-linux.img" >> /boot/loader/entries/n4m3h3r3p134z.conf
 echo "options    root=/dev/nvme0n1p2 rw" >> /boot/loader/entries/n4m3h3r3p134z.conf
+echo "If systemd-boot doesn't work for your machine, try grub-boot"
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
+grub-mkconfig -o /boot/grub/grub.cfg
+
 systemctl enable NetworkManager
 useradd -mG wheel d3f4l7d
 passwd d3f4l7d
