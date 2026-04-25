@@ -76,7 +76,8 @@ EDITOR=vim visudo
 exit
 umount -a
 reboot
-echo "Enter BIOS and find Arch Linux on Boot menu or point out /grub/x86_64-efi/grub.efi instead"
+
+echo "Enter BIOS and find Arch Linux on Boot menu or point out /efi/boot/bootx64.efi or /grub/x86_64-efi/grub.efi instead"
 
 sudo pacman -S openssh ufw xorg git
 sudo systemctl start sshd && sudo systemctl start ufw
