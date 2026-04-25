@@ -14,7 +14,7 @@ echo "1 (default)"
 echo "2048 (default)"
 echo "+500M"
 echo "t"
-echo "L"
+echo "L" #if needed
 echo "1"
 echo "n"
 echo "2 (Default)"
@@ -54,9 +54,11 @@ passwd
 pacman -S efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel grub
 
 echo "[systemd-boot] -> suitable for many machines from MSI, ASRock, or else, except for Dell InsydeH2O"
+
 bootctl --path=/boot install
 echo "timeout 3" >> /boot/loader/loader.conf
 echo "default n4m3h3r3p134z-*" >> /boot/loader/loader.conf
+
 echo "title    Arch Linux" >> /boot/loader/entries/n4m3h3r3p134z.conf
 echo "linux    /vmlinuz-linux" >> /boot/loader/entries/n4m3h3r3p134z.conf
 echo "initrd    /initramfs-linux.img" >> /boot/loader/entries/n4m3h3r3p134z.conf
