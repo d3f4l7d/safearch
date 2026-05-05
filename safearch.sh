@@ -58,7 +58,7 @@ echo "127.0.1.1        n4m3h3r3p134z.localdomain        n4m3h3r3p134z" >> /etc/h
 passwd
 pacman -S efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel grub
 
-echo "[systemd-boot] -> suitable for many machines from MSI, ASRock, or else.
+echo "[systemd-boot] -> suitable for many machines from MSI, ASRock, or else."
 
 bootctl --path=/boot install
 echo "timeout 3" >> /boot/loader/loader.conf
@@ -69,7 +69,7 @@ echo "linux    /vmlinuz-linux" >> /boot/loader/entries/n4m3h3r3p134z.conf
 echo "initrd    /initramfs-linux.img" >> /boot/loader/entries/n4m3h3r3p134z.conf
 echo "options    root=/dev/nvme0n1p2 rw" >> /boot/loader/entries/n4m3h3r3p134z.conf
 
-echo "[grub] -> just in case
+echo "[grub] -> just in case"
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
 grub-mkconfig -o /boot/grub/grub.cfg
 
