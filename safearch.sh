@@ -28,6 +28,11 @@ mount /dev/nvme0n1p2 /mnt
 mkdir /mnt/boot
 mount /dev/nvme0n1p1 /mnt/boot
 
+iwctl
+device list
+station wlan0 get-network
+station wlan0 connect <some wi-fi spot>
+
 pacman -Sy archlinux-keyring
 pacstrap /mnt base linux linux-headers linux-firmware vim linux-lts linux-lts-headers
 genfstab -U /mnt >> /mnt/etc/fstab
