@@ -69,6 +69,11 @@ echo "linux    /vmlinuz-linux" >> /boot/loader/entries/n4m3h3r3p134z.conf
 echo "initrd    /initramfs-linux.img" >> /boot/loader/entries/n4m3h3r3p134z.conf
 echo "options    root=/dev/nvme0n1p2 rw" >> /boot/loader/entries/n4m3h3r3p134z.conf
 
+echo "title    Arch Linux LTS" >> /boot/loader/entries/n4m3h3r3p134z-lts.conf
+echo "linux    /vmlinuz-linux-lts" >> /boot/loader/entries/n4m3h3r3p134z-lts.conf
+echo "initrd    /initramfs-linux-lts.img" >> /boot/loader/entries/n4m3h3r3p134z-lts.conf
+echo "options    root=/dev/nvme0n1p2 rw" >> /boot/loader/entries/n4m3h3r3p134z-lts.conf
+
 echo "[grub] -> just in case"
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch
 grub-mkconfig -o /boot/grub/grub.cfg
