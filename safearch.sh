@@ -87,6 +87,7 @@ exit
 umount -a
 reboot
 
-
-echo "Enter BIOS and find Arch Linux on Boot menu or point out /efi/boot/bootx64.efi or /grub/x86_64-efi/grub.efi instead"
-
+echo
+echo "Enter BIOS and find Arch Linux on Boot menu"
+echo "or point out /efi/boot/bootx64.efi or /grub/x86_64-efi/grub.efi instead"
+echo
