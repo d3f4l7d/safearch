@@ -1,3 +1,3 @@
 # Installation
-Just type all the commands on safearch.sh manually.
-
+safearch.sh is just a memo. Type it manually.
+helloworld.sh is an autoscript. Use it effectively.
