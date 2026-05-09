@@ -2,7 +2,7 @@
 Manually type each line of safearch.sh to safely install Arch Linux.
 If you need simpler server setting, just execute like below.
 ```
-chmod +x ./helloworld.sh
+chmod +x helloworld.sh
 ```
 And then...
 ```
