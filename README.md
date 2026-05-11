@@ -9,7 +9,15 @@ And then...
 ./helloworld.sh
 ```
 
-If you stuck during systemd boot, ctrl + alt + F2 will give a access to console.
+If you stuck with lightdm.service after installing xorg, 
+```
+ctrl + alt + F2
+```
+will give a access to console, and just do 
+```
+sudo pacman -Syuu
+```
+
 
 Welcome to Arch World 😇
 
