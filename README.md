@@ -9,6 +9,8 @@ And then...
 ./helloworld.sh
 ```
 
+If you stuck during systemd boot, ctrl + alt + F2 will give a access to console.
+
 Welcome to Arch World 😇
 
 MIT License
