@@ -10,10 +10,13 @@ And then...
 ```
 
 If you stuck with lightdm.service after installing xorg, 
+
 ```
 ctrl + alt + F2
 ```
+
 will give a access to console, and just do 
+
 ```
 sudo pacman -Syuu
 ```
