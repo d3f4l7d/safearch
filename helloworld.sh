@@ -10,7 +10,7 @@ echo
 echo "There is no choice to install 'git', right?"
 
 
-sudo pacman -Syu --noconfirm
+sudo pacman -Syuu
 
 
 sudo pacman -S --noconfirm openssh ufw xorg
