@@ -24,6 +24,5 @@ sudo pacman -Syuu
 
 Welcome to Arch World 😇
 
-MIT License
-
-Copyright (c) 2026 d3f4l7d
+## License
+MIT License - see LICENSE file for more details.
